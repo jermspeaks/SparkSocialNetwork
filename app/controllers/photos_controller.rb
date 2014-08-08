@@ -77,10 +77,10 @@ class PhotosController < ApplicationController
     def get_user
       id = session[:user_id]
       if id == nil 
-        redirect_to root_path
+        redirect_to '/'
       else
         @user = User.find(id)
-        redirect_to root_path if @user == nil
+        redirect_to '/' if @user == nil
       end
     end
 

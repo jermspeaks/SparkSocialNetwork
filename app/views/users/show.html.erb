@@ -1,7 +1,31 @@
-<div class="container">
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Logout', logout_path %>
+
+<div class="user-profile">
   <h1>WELCOME TO FLIGHT</h1>
-
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  <div class="user-avatar">
+     <% if @user.profile_pics.all.size == 0 %>
+  	   <%= image_tag('rsz_default_avatar.png') %>  
+     <% else %>
+       <%= image_tag(@user.profile_pics.all.last.url.large) %>
+     <% end %>
+  	 <div id="change-avatar">
+       <p>Wanna change your avatar?</p>
+  	   <%= form_for @photo do |f| %>
+        <%= f.hidden_field :description, value: 'avatar' %>
+        <%= f.file_field :url %>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+  	 </div>	
+  </div>
+  <div class="user-info">	
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
     <p><%= @user.email %></p>
-
+  </div>
 </div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -2,8 +2,14 @@ Rails.application.routes.draw do
   root 'users#new'
   get 'users/new'
 
-  resources :users
+  resources :users, except: :index
   resources :photos
+  resources :sessions, only: [:new, :create, :destroy]
+
+  # aliases:
+  
+
+  post 'users/sessions', to: 'users#sessions'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

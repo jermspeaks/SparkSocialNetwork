@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :photos
 
   # feed to be included in the home controller, i.e. get 'feed', to: 'home/#feed'
-  get 'feed', to: 'feed#index' 
+  get 'feed', to: 'feed#index', status: 401
 end

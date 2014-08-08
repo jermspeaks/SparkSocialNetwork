@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_secure_password
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
@@ -13,19 +15,4 @@ class User < ActiveRecord::Base
   has_many :user_friends
   has_many :friends, through: :user_friends, source: :friend
 
-  include BCrypt
-  
-  def self.authenticate(args) 
-    user = User.find_by_email(args[:email])
-    user.password == args[:password] ? user : nil
-  end
-
-  def password
-    @password ||= Password.new(password_digest)
-  end
-
-  def password=(secret_password)
-    @password = Password.create(secret_password)
-    self.password_digest = @password
-  end
 end

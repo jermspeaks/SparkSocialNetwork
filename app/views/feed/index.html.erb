@@ -1,0 +1,32 @@
+<!-- Render Nav Bar -->
+<!-- Render Create Post -->
+
+<!-- Show All Posts -->
+<h1>Welcome To Your Feed</h1>
+<% @posts.each do |post| %>
+	<div class="feed-post">
+		<p><%= post.poster.first_name post.poster.last_name %></p>
+		<% if post.photo %>
+			<p>
+			  <strong>Description:</strong>
+			  <%= post.photo.description %>
+			</p>
+
+			<p>
+			  <strong>Uploader:</strong>
+			  <%= post.photo.uploader_id %>
+			</p>
+
+			<p>
+			  <strong>Url:</strong>
+			  <%= image_tag(post.photo.url) %>
+			</p>
+		<% elsif post.update %>
+			<p><%= post.update.text %></p>
+			<p>Posted: <%= post.update.create_at %></p>
+		<% end %>
+	</div>
+<% end %>
+
+
+<!-- To Do: Show only posts from friends -->

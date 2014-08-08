@@ -1,0 +1,30 @@
+<%= form_for :user, url: users_path do |user| %>
+  <p>
+    <%= user.label :first_name %><br>
+    <%= user.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= user.label :last_name %><br>
+    <%= user.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= user.label :email %><br>
+    <%= user.email_field :email %>
+  </p>
+
+  <p>
+    <%= user.label :enter_password %><br>
+    <%= user.password_field :password %>
+  </p>
+
+  <p>
+    <%= user.label :confirm_password %><br>
+    <%= user.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= user.submit value="START FLYING" %>
+  </p>
+<% end %>

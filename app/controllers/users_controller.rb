@@ -8,15 +8,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def sessions
-    user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
-    if user
-      session[:user_id] = user.id
-      redirect_to users_path
-    else
-      redirect_to :root
-    end
-  end
+  # def sessions
+  #   
+  # end
 
 
   def create

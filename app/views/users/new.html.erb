@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= form_for :user, url: users_sessions_path do |user| %>
+  <%= form_for :user, url: sessions_path do |user| %>
     <p>
       <%= user.label :email %> <%= user.email_field :email %>
       <%= user.label :enter_password %> <%= user.password_field :password %>

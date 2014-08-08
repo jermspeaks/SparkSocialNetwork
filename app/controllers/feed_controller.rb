@@ -1,5 +1,6 @@
-class FeedController < ApplicationController
+include FeedHelper
 
+class FeedController < ApplicationController
 	def index
 		current_user
 		@posts = Post.all

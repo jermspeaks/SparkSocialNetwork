@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @photo = @user.profile_pics.new
+    @photo = Photo.new
   end
 
   def new

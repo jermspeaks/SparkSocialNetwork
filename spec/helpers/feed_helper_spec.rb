@@ -1,15 +1,11 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the FeedHelper. For example:
-#
-# describe FeedHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe FeedHelper, :type => :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#current_user' do
+  	it 'should return the current user if the current user holds a session' do
+  		@user = User.create(first_name: "Joe", last_name: "Blo", email: "me@example.com", password: "12345", password_confirmation: "12345")
+  		session[:user_id] = @user.id
+  		expect(current_user).to eq(@current_user)
+  	end
+  end
 end

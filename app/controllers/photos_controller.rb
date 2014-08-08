@@ -25,11 +25,17 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
-
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
+        if @photo.description == 'avatar'
+          @user = User.find(@photo.uploader_id)
+          @user.profile_pics << @photo
+          format.html { redirect_to @user, notice: 'Successfully changed your avatar.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+          format.json { render :show, status: :created, location: @photo }
+        end
       else
         format.html { render :new }
         format.json { render json: @photo.errors, status: :unprocessable_entity }

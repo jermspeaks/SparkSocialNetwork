@@ -10,7 +10,9 @@
 #all-users {
 	position: fixed;
 	border: groove;
-	width: 25%;	
+	width: 25%;
+	opacity: 0;
+	visibility: hidden;	
 }
 
 #all-users ul {
@@ -26,4 +28,14 @@
 
 #all-requests ul {
 	list-style: none;
+}
+
+#all-users li {
+	
+}
+
+#send-request {
+	float: right;
+	margin-right: 6px;
+	margin-top: 19px;
 }

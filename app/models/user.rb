@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
   has_many :uploaded_photos, class_name: "Photo", foreign_key: "uploader_id"
   has_many :user_friends
   has_many :friends, through: :user_friends, source: :friend
-
+  has_many :friend_requests
+  has_many :requests, through: :friend_requests, source: :requester
 end

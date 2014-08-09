@@ -2,11 +2,11 @@ $( document ).ready(function() {
   var addBox = $('#all-users');
   var requestBox = $('#all-requests');
 
-  // var userID = 
+  // var userID =
 
 
-  toggleBox = function(box) { 
-        var duration = "slow";  
+  toggleBox = function(box) {
+        var duration = "slow";
         if (box.css('visibility') == 'visible') {
             box.fadeTo(duration, 0, function () {
                 box.css({ visibility: "hidden" });
@@ -14,7 +14,7 @@ $( document ).ready(function() {
         } else {
             box.fadeTo(duration, 1).css({ visibility: "visible" });
         }
-  	}	
+  	}
 
   $('nav.navigation-bar-content').on('click', 'a#add-button', function(event) {
   	event.preventDefault();
@@ -34,7 +34,7 @@ $( document ).ready(function() {
       $('#loading').css("opacity", "1");
       $('#loading').css("visibility", "visible");
   });
-  
+
   $("#upload-new-photo").on('submit', 'form', function(event) {
       $("body :not(#loading)").css("opacity", "0.6");
       $('#loading').css("opacity", "1");
@@ -81,6 +81,16 @@ $( document ).ready(function() {
       data: sendData,
       dataType: "json"
     });
+  });
+
+
+  $('.carousel').carousel({
+      auto: false,
+      period: 3000,
+      duration: 2000,
+      markers: {
+          type: "square"
+      }
   });
 
 });

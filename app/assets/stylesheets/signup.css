@@ -1,0 +1,23 @@
+.signup {
+  position: absolute;
+  left: 800px;
+  top: 200px;
+}
+
+body {
+  background-color: #d3d3d3;
+}
+
+.container h1 {
+  position: absolute;
+  left: 300px;
+}
+
+.container h4 {
+  position: absolute;
+  left: 325px;
+}
+
+/*#d05e27*/
+/*#future Pt - regular
+font size 15;*/

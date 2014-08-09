@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, except: :index
   resources :photos
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts, except: :index
 
   post '/users/send.json', to: 'users#send_request'
   post '/users/accept.json', to: 'users#accept_request'

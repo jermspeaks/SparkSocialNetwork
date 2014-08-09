@@ -1,4 +1,4 @@
-class Status < ActiveRecord::Base
+class Availability < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :text

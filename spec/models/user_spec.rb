@@ -66,8 +66,8 @@ RSpec.describe User, :type => :model do
   end
 
   context 'associations type' do
-    it 'should have many statuses' do
-      expect(User.reflect_on_association(:statuses).macro).to eq(:has_many)
+    it 'should have has one availability' do
+      expect(User.reflect_on_association(:availability).macro).to eq(:has_one)
     end
 
     it 'should have many comments' do
@@ -101,10 +101,11 @@ RSpec.describe User, :type => :model do
       @user.destroy
     end
 
-    it 'can create a new status' do
-      @user.statuses.create(text: "I am happy")
-      expect(@user.statuses.last.text).to eq("I am happy")
-      expect(@user.statuses.last.user_id).to eq(@user.id)
+    it 'can create a new availability' do
+      Availability.create(text: "I am happy", user: @user)
+      expect(@user.availability).to be_a Availability
+      expect(@user.availability.text).to eq("I am happy")
+      expect(@user.availability.user_id).to eq(@user.id)
     end
 
     it 'can create a new comment' do

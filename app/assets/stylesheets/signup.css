@@ -48,6 +48,7 @@ body {
   position: absolute;
   left: 375px;
   top: 530px;
+  border-radius: 20px;
   background-color: green;
 }
 
@@ -60,7 +61,7 @@ vertical-align: middle !important;
 background-color: green;
 border: 3px transparent solid;
 color: white;
-border-radius: 0;
+border-radius: 20px;
 cursor: pointer;
 display: inline-block;
 outline: none;

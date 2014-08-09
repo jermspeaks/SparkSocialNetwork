@@ -2,6 +2,8 @@ $( document ).ready(function() {
   var addBox = $('#all-users');
   var requestBox = $('#all-requests');
 
+  // var userID = 
+
 
   toggleBox = function(box) { 
         var duration = "slow";  
@@ -37,6 +39,21 @@ $( document ).ready(function() {
       $("body :not(#loading)").css("opacity", "0.6");
       $('#loading').css("opacity", "1");
       $('#loading').css("visibility", "visible");
+  });
+
+  $('#all-users').on('click', 'button#send-request', function(event) {
+    event.preventDefault();
+    var $curr = $(this);
+    var receiverID = $curr.parent().find('a').attr("href").split("/").pop();
+    $curr.parent().remove();
+    sendData = {receiver_id: receiverID};
+    console.log(sendData);
+    $.ajax({
+      type: "POST",
+      url: '/users/send.json',
+      data: sendData,
+      dataType: "json"
+    });
   });
 
 });

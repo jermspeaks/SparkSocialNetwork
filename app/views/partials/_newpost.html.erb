@@ -1,6 +1,6 @@
 <%= form_for @post, url: {action: "create"} do |f| %>
   <%= f.label :status %><br>
-  <%= f.text_field :status %>
+  <%= f.text_area :status %>
 
   <%= render 'photos/form' %>
 <% end %>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, except: :index
   resources :photos
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts, except: :index
 
   # aliases:
   get '/signup', to: 'users#new', as: :signup

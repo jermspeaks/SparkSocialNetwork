@@ -1,5 +1,5 @@
 class Availability < ActiveRecord::Base
-  has_one :user
+  belongs_to :user
 
   validates_presence_of :text
 end

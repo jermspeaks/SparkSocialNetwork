@@ -102,9 +102,10 @@ RSpec.describe User, :type => :model do
     end
 
     it 'can create a new availability' do
-      @user.availability.create(text: "I am happy")
-      expect(@user.availability.last.text).to eq("I am happy")
-      expect(@user.availability.last.user_id).to eq(@user.id)
+      Availability.create(text: "I am happy", user: @user)
+      expect(@user.availability).to be_a Availability
+      expect(@user.availability.text).to eq("I am happy")
+      expect(@user.availability.user_id).to eq(@user.id)
     end
 
     it 'can create a new comment' do

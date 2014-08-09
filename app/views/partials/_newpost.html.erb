@@ -1,0 +1,6 @@
+<%= form_for @post, url: {action: "create"} do |f| %>
+  <%= f.label :status %><br>
+  <%= f.text_area :status %>
+
+  <%= f.submit %>
+<% end %>

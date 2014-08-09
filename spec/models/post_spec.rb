@@ -6,6 +6,15 @@ RSpec.describe Post, :type => :model do
     @user = User.create(first_name: "Si", last_name: "G", email: "s@gmail.com")
   end
 
+  describe 'attributes' do
+    context "#status" do
+      it 'should return post status' do
+        post = Post.create(poster: @user, status: "I'm at a concert. Yay!")
+        expect(post.status).to eq("I'm at a concert. Yay!")
+      end
+    end
+  end
+
   describe 'associations' do
     it "should have many photos" do
       t = Post.reflect_on_association(:photos)
@@ -13,7 +22,7 @@ RSpec.describe Post, :type => :model do
     end
 
     it 'should have many photos' do
-        photo = Photo.create(description: "fuck off everyone")
+        photo = Photo.create(description: "hello everyone")
         post = Post.create(poster: @user)
         post.photos << photo
         expect(post.photos.length).to eq(1)

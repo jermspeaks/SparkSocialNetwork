@@ -24,6 +24,8 @@
 	border: groove;
 	width: 25%;	
 	margin-left: 72%;
+	opacity: 0;
+	visibility: hidden;	
 }
 
 #all-requests ul {

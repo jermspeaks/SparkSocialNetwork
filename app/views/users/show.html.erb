@@ -2,9 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <% if session[:user_id] && session[:user_id] == @user.id %>
-  <%= link_to 'Logout', logout_path %>
   <div id="add-friend">
-    <button id="add-button">Add friend</button>
     <div id="all-users">
       <%= render 'partials/allusers' %>
     </div>

@@ -1,7 +1,9 @@
 $( document ).ready(function() {
+  var addBox = $('#all-users');
+  var requestBox = $('#all-requests');
 
-  toggleAddBox = function() {
-  	var box = $('#all-users'); 
+
+  toggleBox = function(box) { 
         var duration = "slow";  
         if (box.css('visibility') == 'visible') {
             box.fadeTo(duration, 0, function () {
@@ -12,10 +14,18 @@ $( document ).ready(function() {
         }
   	}	
 
-  $('#add-friend').on('click', '#add-button', function(event) {
+  $('nav.navigation-bar-content').on('click', 'a#add-button', function(event) {
   	event.preventDefault();
-  	toggleAddBox();
+  	toggleBox(addBox);
   });
+
+
+  $('nav.navigation-bar-content').on('click', 'a#see-request', function(event) {
+    event.preventDefault();
+    toggleBox(requestBox);
+  });
+
+
 
   $("#change-avatar").on('submit', 'form', function(event) {
       $("body :not(#loading)").css("opacity", "0.6");

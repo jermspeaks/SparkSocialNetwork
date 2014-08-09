@@ -1,18 +1,71 @@
-<nav>
+<nav class="navigation-bar fixed-top">
+    <nav class="navigation-bar-content">
+    	<% current_user %>
+    	<% if @current_user %>
+    	<a class="element" href="/">FLITE SOCIAL NETWORK</a>
+    	<span class="element-divider"></span>
+    	<a id="add-button" class="element" href="#">ADD FRIENDS</a>
+    	<span class="element-divider"></span>
+
+        <!-- <div class="element">
+
+            <a class="element" href="/">FLITE SOCIAL NETWORK</a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="#">Main</a></li>
+                <li><a href="#">File Open</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Print...</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Exit</a></li>
+            </ul>
+        </div> -->
+ 
+        <span class="element-divider"></span>
+        <a class="element brand" href="#"><span class="icon-spin"></span></a>
+        <a class="element brand" href="#"><span class="icon-printer"></span></a>
+        <span class="element-divider"></span>
+ 
+        <!-- <div class="element input-element">
+            <form>
+                <div class="input-control text">
+                    <input type="text" placeholder="Search...">
+                    <button class="btn-search"></button>
+                </div>
+            </form>
+        </div> -->
+ 		
+        <!-- <div class="element place-right">
+        </div> -->
+        
+        <span class="icon-locked-2"><%= link_to 'Log out', logout_path, {class: "element place-right"} %></span>
+        <span class="element-divider place-right"></span>
+        <span class="icon-locked-2"><%= link_to 'Requests', '#', {class: "element place-right", id: "see-request"} %></span>
+        <span class="element-divider place-right"></span>
+        <button class="element image-button image-left place-right">
+            <%= @current_user.first_name %> <%= @current_user.last_name %>
+            <%= image_tag(@current_user.avatar_small) %>
+        </button>
+        <% end %>
+    </nav>
+</nav>
+
+
+
+<!-- <nav>
+	<% current_user %>
 	<% if @current_user %>
-		<div class="logo">
-			<!-- Logo Image Here -->
-		</div>
-		<!-- First Name / Last Name / Profile Page Link -->
-		<!-- Search Bar -->
-		<!-- Feed Link (Home) -->
-		<!-- Right: Logout -->
+		<ul>
+			<li><a href="#">Logo</a></li>
+			<li><a href="#">Home Feed</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Log out</a></li>
+		</ul>
 	<% else %>
 		<div class="logo">
-			<!-- Logo Image Here -->
+		
 		</div>
 		<div class="login">
 			<%= render 'partials/login' %>
 		</div>
 	<% end %> 
-</nav>
+</nav>  -->

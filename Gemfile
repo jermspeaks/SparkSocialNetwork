@@ -35,6 +35,7 @@ gem 'carrierwave'
 gem 'fog'
 # photo resizing
 gem "mini_magick"
+gem 'jquery-ui-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

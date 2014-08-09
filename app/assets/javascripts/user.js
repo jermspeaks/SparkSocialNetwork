@@ -4,6 +4,10 @@ $( document ).ready(function() {
 
   // var userID = 
 
+  $('.carousel').carousel({
+    height: 300
+  });
+
 
   toggleBox = function(box) { 
         var duration = "slow";  

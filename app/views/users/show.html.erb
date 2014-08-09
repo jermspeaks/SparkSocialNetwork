@@ -38,7 +38,7 @@
       </div>
     <% end %>
   </div>
-  
+
 </div>
 <p class="divider2"></p>
 
@@ -59,6 +59,15 @@
     <div class="user-post">
       <% post.updates.all.each do |update| %> 
         <p><%= update.text %></p>
+        <p class="time-post">
+          <span class="time-span">Created at: <%= update.created_at.localtime.strftime("%e %b %Y - %I:%M %p") %></span> | 
+          <span class="time-span"></span>
+          <span class="time-span">Last update: <%= update.updated_at.localtime.strftime("%e %b %Y - %I:%M %p") %></span> | 
+          <span class="time-span"></span>
+          <span class="time-span">
+          by <%= link_to post.poster.first_name + " " + post.poster.last_name, post.poster %>  
+          </span>
+        </p>
       <% end %>
 
       <% post.photos.all.each do |photo| %> 

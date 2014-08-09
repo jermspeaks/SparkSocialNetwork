@@ -17,7 +17,7 @@
 	        <span class="icon-locked-2"><%= link_to 'Requests', '#', {class: "element place-right", id: "see-request"} %></span>
 	        <span class="element-divider place-right"></span>
 	        <button class="element image-button image-left place-right">
-	            <%= @current_user.first_name %> <%= @current_user.last_name %>
+	        	<%= link_to @current_user.first_name + " " + @current_user.last_name, @current_user %>
 	            <%= image_tag(@current_user.avatar_small) %>
 	        </button>
 		<% else %>

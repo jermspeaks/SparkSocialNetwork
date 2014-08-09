@@ -1,0 +1,12 @@
+.time-post {
+	font-size: 12px;
+}
+
+.time-span {
+	margin-right: 10px;
+}
+
+.time-span a {
+	color: blue;
+	text-decoration: none;
+}

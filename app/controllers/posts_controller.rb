@@ -1,12 +1,21 @@
+include PostsHelper
+
 class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @photo = Photo.new
   end
 
   def create
-    Post.create(params[:post]).include(:photo)
+    current_user
+    if @current_user
+      new_post = Post.create(post_params)
+      new_post.update(poster: @current_user)
+      new_post.save
+      redirect_to user_path(@current_user)
+    else
+      redirect_to root_path
+    end
   end
 
   def show
@@ -24,5 +33,10 @@ class PostsController < ApplicationController
   def destroy
 
   end
+
+  private
+    def post_params
+      params.require(:post).permit(:status, :poster)
+    end
 
 end

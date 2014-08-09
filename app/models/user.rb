@@ -16,4 +16,30 @@ class User < ActiveRecord::Base
   has_many :friends, through: :user_friends, source: :friend
   has_many :friend_requests
   has_many :requests, through: :friend_requests, source: :requester
+
+  def send_request(receiver_id)
+    receiver = User.find(receiver_id)
+    if (receiver && !receiver.friends.include?(self) && !receiver.requests.include?(self))
+      receiver.friend_requests.create(user_id: receiver_id, requester_id: self.id)
+    else
+      nil
+    end
+  end
+
+  def accept_request(requester_id)
+    requester = User.find(requester_id)
+    if (requester && self.requests.include?(requester) && !self.friends.include?(requester))
+      # add friends
+      UserFriend.create(user_id: self.id, friend_id: requester_id)
+      UserFriend.create(user_id: requester_id, friend_id: self.id)
+      # delete request
+      FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+    else
+      nil
+    end
+  end
+
+  def reject_request(requester_id)
+      FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+  end
 end

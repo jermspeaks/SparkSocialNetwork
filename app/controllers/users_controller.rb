@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  include ApplicationHelper 
+  include ApplicationHelper
   def show
     @user = User.find(params[:id])
     @users = User.all - @user.friends.all - [@user] - @user.receivers.all
@@ -58,6 +58,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      UserMailer.welcome_email(@user).deliver
+
       session[:user_id] = @user.id
       redirect_to @user
     else

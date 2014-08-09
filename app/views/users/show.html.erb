@@ -59,16 +59,22 @@
 <p class="divider2"></p>
 
 <div class="all-photos">
-<div class="carousel">
-  <% non_ava_photos = @user.uploaded_photos.all - @user.profile_pics.all %>
-  <% non_ava_photos.each do |photo| %>
-    <div class="slide">
-        <%= image_tag(photo.url.fit_thumbnail) %>
-    </div>
-  <% end %>
-    <a class="controls left"><i class="icon-arrow-left-3"></i></a>
-    <a class="controls right"><i class="icon-arrow-right-3"></i></a>
-</div>
+  <div class="carousel">
+    <% non_ava_photos = @user.uploaded_photos.all - @user.profile_pics.all %>
+    <% if non_ava_photos.empty? %>
+      <br/><br/><br/><br/><br/><br/>
+      <p><center>You have not uploaded any photos yet!</center></p>
+    <% else %>
+      <% non_ava_photos.each do |photo| %>
+        <div class="slide">
+            <%= image_tag(photo.url.fit_thumbnail) %>
+        </div>
+      <% end %>
+      <a class="controls left"><i class="icon-arrow-left-3"></i></a>
+      <a class="controls right"><i class="icon-arrow-right-3"></i></a>
+    <% end %>
+    
+  </div>
 </div>
 <p class="divider2"></p>
 

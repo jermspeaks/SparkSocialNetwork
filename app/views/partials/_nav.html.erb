@@ -2,7 +2,7 @@
     <nav class="navigation-bar-content">
     	<button class="element image-button image-left">
     		<%= image_tag('logo50.png') %>
-            <a href="/">FLITE SOCIAL NETWORK</a>
+            <a href="/">    SPARK    </a>
         </button>
         <span class="element-divider"></span>
     	<% current_user %>
@@ -11,7 +11,7 @@
 	    	<span class="element-divider"></span>
 	    	<a id="add-button" class="element" href="#">ADD FRIENDS</a>
 	    	<span class="element-divider"></span>
-	        
+
 	        <span class="icon-locked-2"><%= link_to 'Log out', logout_path, {class: "element place-right"} %></span>
 	        <span class="element-divider place-right"></span>
 	        <span class="icon-locked-2"><%= link_to 'Requests', '#', {class: "element place-right", id: "see-request"} %></span>
@@ -24,15 +24,13 @@
 			<a id="add-button" class="element" href="#">SIGN IN</a>
 	    	<span class="element-divider"></span>
 			<a class="element" href="/users/new">REGISTER</a>
-	    	<span class="element-divider"></span>	
+	    	<span class="element-divider"></span>
         <% end %>
 
-		
 
 
     </nav>
 </nav>
-
 
 
 <!-- <nav>
@@ -46,10 +44,10 @@
 		</ul>
 	<% else %>
 		<div class="logo">
-		
+
 		</div>
 		<div class="login">
 			<%= render 'partials/login' %>
 		</div>
-	<% end %> 
+	<% end %>
 </nav>  -->

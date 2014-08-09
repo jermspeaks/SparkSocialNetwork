@@ -23,7 +23,7 @@
 	position: fixed;
 	border: groove;
 	width: 25%;	
-	margin-left: 72%;
+	margin-left: 75%;
 	opacity: 0;
 	visibility: hidden;	
 }
@@ -39,7 +39,6 @@
 #send-request {
 	float: right;
 	margin-right: 6px;
-	margin-top: 19px;
 }
 
 #loading {

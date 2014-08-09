@@ -2,40 +2,15 @@
     <nav class="navigation-bar-content">
     	<% current_user %>
     	<% if @current_user %>
-    	<a class="element" href="/">FLITE SOCIAL NETWORK</a>
+    	<button class="element image-button image-left">
+    		<%= image_tag('logo50.png') %>
+            FLITE SOCIAL NETWORK
+        </button>
+    	<span class="element-divider"></span>
+    	<a class="element" href="/feed">HOME</a>
     	<span class="element-divider"></span>
     	<a id="add-button" class="element" href="#">ADD FRIENDS</a>
     	<span class="element-divider"></span>
-
-        <!-- <div class="element">
-
-            <a class="element" href="/">FLITE SOCIAL NETWORK</a>
-            <ul class="dropdown-menu" data-role="dropdown">
-                <li><a href="#">Main</a></li>
-                <li><a href="#">File Open</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Print...</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Exit</a></li>
-            </ul>
-        </div> -->
- 
-        <span class="element-divider"></span>
-        <a class="element brand" href="#"><span class="icon-spin"></span></a>
-        <a class="element brand" href="#"><span class="icon-printer"></span></a>
-        <span class="element-divider"></span>
- 
-        <!-- <div class="element input-element">
-            <form>
-                <div class="input-control text">
-                    <input type="text" placeholder="Search...">
-                    <button class="btn-search"></button>
-                </div>
-            </form>
-        </div> -->
- 		
-        <!-- <div class="element place-right">
-        </div> -->
         
         <span class="icon-locked-2"><%= link_to 'Log out', logout_path, {class: "element place-right"} %></span>
         <span class="element-divider place-right"></span>

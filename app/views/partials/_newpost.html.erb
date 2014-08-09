@@ -1,0 +1,6 @@
+<%= form_for @post, url: {action: "create"} do |f| %>
+  <%= f.label :status %><br>
+  <%= f.text_field :status %>
+
+  <%= render 'photos/form' %>
+<% end %>

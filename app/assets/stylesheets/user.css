@@ -1,5 +1,5 @@
 .user-profile-page {
-
+	margin-top: 10%;
 }
 
 .user-profile {
@@ -12,7 +12,7 @@
 	border: groove;
 	width: 25%;
 	opacity: 0;
-	visibility: hidden;	
+	visibility: hidden;
 }
 
 #all-users ul {
@@ -22,8 +22,10 @@
 #all-requests {
 	position: fixed;
 	border: groove;
-	width: 25%;	
-	margin-left: 72%;
+	width: 25%;
+	margin-left: 75%;
+	opacity: 0;
+	visibility: hidden;
 }
 
 #all-requests ul {
@@ -31,13 +33,12 @@
 }
 
 #all-users li {
-	
+
 }
 
 #send-request {
 	float: right;
 	margin-right: 6px;
-	margin-top: 19px;
 }
 
 #loading {
@@ -48,4 +49,8 @@
 	margin-top: 10%;
 	background-image: url('http://s27.postimg.org/64srd7bvn/loading.gif');
 	visibility: hidden;
+}
+
+.user-timeline {
+	margin-left: 5%;
 }

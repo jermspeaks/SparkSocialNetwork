@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_many :friends, through: :user_friends, source: :friend
   has_many :friend_requests
   has_many :requests, through: :friend_requests, source: :requester
+  has_many :sent_requests, class_name: "FriendRequest", foreign_key: "requester_id"
+  has_many :receivers, through: :sent_requests, source: :user
 
   def avatar_large
     if self.profile_pics.all.empty? 
@@ -45,7 +47,9 @@ class User < ActiveRecord::Base
   def send_request(receiver_id)
     receiver = User.find(receiver_id)
     if (receiver && !receiver.friends.include?(self) && !receiver.requests.include?(self))
-      receiver.friend_requests.create(user_id: receiver_id, requester_id: self.id)
+      FriendRequest.create(user_id: receiver_id, requester_id: self.id)
+      self.reload
+      receiver.reload
     else
       nil
     end

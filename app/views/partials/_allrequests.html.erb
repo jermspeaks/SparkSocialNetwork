@@ -1,3 +1,4 @@
+<% if !@requests.empty? %>	
 <ul>
 <% @requests.each do |requester| %>	
 	<li><%= image_tag(requester.avatar_small) %>
@@ -5,5 +6,8 @@
 		<button id="accept">Accept</button>
       	<button id="reject">Reject</button>
 	</li>
-<% end %> 
-</ul>
+<% end %>	
+</ul>	
+<% else %>
+<p><center>You have no friend requests!</center></p> 
+<% end %>

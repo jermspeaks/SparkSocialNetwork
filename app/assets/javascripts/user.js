@@ -47,10 +47,37 @@ $( document ).ready(function() {
     var receiverID = $curr.parent().find('a').attr("href").split("/").pop();
     $curr.parent().remove();
     sendData = {receiver_id: receiverID};
-    console.log(sendData);
     $.ajax({
       type: "POST",
       url: '/users/send.json',
+      data: sendData,
+      dataType: "json"
+    });
+  });
+
+  $('#all-requests').on('click', 'button#accept', function(event) {
+    event.preventDefault();
+    var $curr = $(this);
+    var requesterID = $curr.parent().find('a').attr("href").split("/").pop();
+    $curr.parent().remove();
+    sendData = {requester_id: requesterID};
+    $.ajax({
+      type: "POST",
+      url: '/users/accept.json',
+      data: sendData,
+      dataType: "json"
+    });
+  });
+
+  $('#all-requests').on('click', 'button#reject', function(event) {
+    event.preventDefault();
+    var $curr = $(this);
+    var requesterID = $curr.parent().find('a').attr("href").split("/").pop();
+    $curr.parent().remove();
+    sendData = {requester_id: requesterID};
+    $.ajax({
+      type: "POST",
+      url: '/users/reject.json',
       data: sendData,
       dataType: "json"
     });

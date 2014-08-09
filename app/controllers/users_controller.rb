@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def send_request
     current_user
     if @current_user
-
       new_request = FriendRequest.new(user_id: params[:receiver_id], requester_id: @current_user.id)
       respond_to do |format|
       if new_request.save
@@ -28,11 +27,25 @@ class UsersController < ApplicationController
   end
 
   def accept_request
-
+    current_user
+    if @current_user
+      @current_user.accept_request(params[:requester_id])
+      format.json { render json: {message: "success"} }
+      format.html
+    else
+      nil
+    end
   end
 
   def reject_request
-
+    current_user
+    if @current_user
+      @current_user.reject_request(params[:requester_id])
+      format.json { render json: {message: "success"} }
+      format.html
+    else
+      nil
+    end
   end
 
   #====================================================

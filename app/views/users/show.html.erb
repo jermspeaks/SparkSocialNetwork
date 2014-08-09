@@ -1,9 +1,12 @@
+<div class="user-profile-page">
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Logout', logout_path %>
-<div id="add-friend">
-  <button>Add friend</button>
-</div>
+<% if session[:user_id] && session[:user_id] == @user.id %>
+  <%= link_to 'Logout', logout_path %>
+  <div id="add-friend">
+    <button>Add friend</button>
+  </div>
+<% end %>
 
 <div class="user-profile">
   <h1>WELCOME TO FLIGHT</h1>
@@ -13,6 +16,7 @@
      <% else %>
        <%= image_tag(@user.profile_pics.all.last.url.large) %>
      <% end %>
+     <% if session[:user_id] && session[:user_id] == @user.id %>
   	 <div id="change-avatar">
        <p>Wanna change your avatar?</p>
   	   <%= form_for @photo do |f| %>
@@ -22,14 +26,16 @@
           <%= f.submit "Submit" %>
         </div>
       <% end %>
-  	 </div> 	
+  	 </div>
+     <% end %> 	
   </div>
 
   <div class="user-info">	
     <h3><%= @user.first_name %> <%= @user.last_name %></h3>
     <p><%= @user.email %></p>
   </div>
-
+  
+  <% if session[:user_id] && session[:user_id] == @user.id %>
   <div id="upload-new-photo">
     <p>Wanna upload a new photo?</p>
     <%= form_for @photo do |f| %>
@@ -41,6 +47,7 @@
       </div>
     <% end %>
   </div>
+  <% end %>
 
 </div>
 <p class="divider2"></p>
@@ -82,3 +89,4 @@
 </div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>

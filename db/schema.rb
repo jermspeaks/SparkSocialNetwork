@@ -55,13 +55,7 @@ ActiveRecord::Schema.define(version: 20140809020042) do
 
   create_table "posts", force: true do |t|
     t.integer  "poster_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "updates", force: true do |t|
-    t.text     "text"
-    t.integer  "post_id"
+    t.text     "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

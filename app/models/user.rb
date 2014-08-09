@@ -34,12 +34,14 @@ class User < ActiveRecord::Base
       UserFriend.create(user_id: requester_id, friend_id: self.id)
       # delete request
       FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+      self.reload
     else
       nil
     end
   end
 
   def reject_request(requester_id)
-      FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+    FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+    self.reload
   end
 end

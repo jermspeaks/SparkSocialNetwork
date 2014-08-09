@@ -21,10 +21,9 @@
      <% end %>
      <% if session[:user_id] && session[:user_id] == @user.id %>
   	 <div id="change-avatar">
-       <p>Wanna change your avatar?</p>
   	   <%= form_for @photo do |f| %>
         <%= f.hidden_field :description, value: 'avatar' %>
-        <%= f.file_field :url %>
+        <%= f.file_field :url, title: "Change my avatar" %>
         <div class="actions">
           <%= f.submit "Submit" %>
         </div>
@@ -90,6 +89,8 @@
     <p class="divider1"></p>  
   <% end %>
 </div>
+<% if session[:user_id] && session[:user_id] == @user.id %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
 <%= link_to 'Back', users_path %>
 </div>

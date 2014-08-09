@@ -1,26 +1,35 @@
 <nav class="navigation-bar fixed-top">
     <nav class="navigation-bar-content">
-    	<% current_user %>
-    	<% if @current_user %>
     	<button class="element image-button image-left">
     		<%= image_tag('logo50.png') %>
-            FLITE SOCIAL NETWORK
+            <a href="/">FLITE SOCIAL NETWORK</a>
         </button>
-    	<span class="element-divider"></span>
-    	<a class="element" href="/feed">HOME</a>
-    	<span class="element-divider"></span>
-    	<a id="add-button" class="element" href="#">ADD FRIENDS</a>
-    	<span class="element-divider"></span>
-        
-        <span class="icon-locked-2"><%= link_to 'Log out', logout_path, {class: "element place-right"} %></span>
-        <span class="element-divider place-right"></span>
-        <span class="icon-locked-2"><%= link_to 'Requests', '#', {class: "element place-right", id: "see-request"} %></span>
-        <span class="element-divider place-right"></span>
-        <button class="element image-button image-left place-right">
-            <%= @current_user.first_name %> <%= @current_user.last_name %>
-            <%= image_tag(@current_user.avatar_small) %>
-        </button>
+        <span class="element-divider"></span>
+    	<% current_user %>
+    	<% if @current_user %>
+	    	<a class="element" href="/feed">HOME</a>
+	    	<span class="element-divider"></span>
+	    	<a id="add-button" class="element" href="#">ADD FRIENDS</a>
+	    	<span class="element-divider"></span>
+	        
+	        <span class="icon-locked-2"><%= link_to 'Log out', logout_path, {class: "element place-right"} %></span>
+	        <span class="element-divider place-right"></span>
+	        <span class="icon-locked-2"><%= link_to 'Requests', '#', {class: "element place-right", id: "see-request"} %></span>
+	        <span class="element-divider place-right"></span>
+	        <button class="element image-button image-left place-right">
+	            <%= @current_user.first_name %> <%= @current_user.last_name %>
+	            <%= image_tag(@current_user.avatar_small) %>
+	        </button>
+		<% else %>
+			<a id="add-button" class="element" href="#">SIGN IN</a>
+	    	<span class="element-divider"></span>
+			<a class="element" href="/users/new">REGISTER</a>
+	    	<span class="element-divider"></span>	
         <% end %>
+
+		
+
+
     </nav>
 </nav>
 

@@ -1,0 +1,9 @@
+<ul>
+<% @requests.each do |requester| %>	
+	<li><%= image_tag(requester.avatar_small) %>
+		<%= link_to requester.first_name + " " + requester.last_name, requester %>
+		<button id="accept">Accept</button>
+      	<button id="reject">Reject</button>
+	</li>
+<% end %> 
+</ul>

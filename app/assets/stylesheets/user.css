@@ -2,6 +2,15 @@
 	margin-top: 10%;
 }
 
+.all-photos {
+	background-color: white;
+	margin-left: 30%;
+	border: solid black 2px;
+	padding: 6px;
+	width: 495px;
+	margin-bottom: 8px;
+}
+
 .user-profile {
 	margin-left: 30%;
 	margin-right: 30%;

@@ -22,5 +22,11 @@ $( document ).ready(function() {
       $('#loading').css("opacity", "1");
       $('#loading').css("visibility", "visible");
   });
+  
+  $("#upload-new-photo").on('submit', 'form', function(event) {
+      $("body :not(#loading)").css("opacity", "0.6");
+      $('#loading').css("opacity", "1");
+      $('#loading').css("visibility", "visible");
+  });
 
 });

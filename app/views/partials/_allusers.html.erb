@@ -2,6 +2,7 @@
 <% @users.each do |user| %>	
 	<li><%= image_tag(user.avatar_small) %>
 		<%= link_to user.first_name + " " + user.last_name, user %>
+		<button id="send-request">Send request</button>
 	</li>
 <% end %> 
 </ul>

@@ -1,0 +1,18 @@
+<nav>
+	<% if @current_user %>
+		<div class="logo">
+			<!-- Logo Image Here -->
+		</div>
+		<!-- First Name / Last Name / Profile Page Link -->
+		<!-- Search Bar -->
+		<!-- Feed Link (Home) -->
+		<!-- Right: Logout -->
+	<% else %>
+		<div class="logo">
+			<!-- Logo Image Here -->
+		</div>
+		<div class="login">
+			<%= render 'partials/login' %>
+		</div>
+	<% end %> 
+</nav>

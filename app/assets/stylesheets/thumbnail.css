@@ -1,0 +1,19 @@
+.user-thumbnail-photos {
+	
+}
+
+.user-thumbnail-photos ul {
+	list-style-type: none;
+}
+
+.user-thumbnail-photos ul li {
+	display: inline;
+	margin-right: 6px;
+}
+
+.thumbnail-frame {
+	background:#ffffff;
+    padding:12px;
+    border:1px solid #999999;
+}
+

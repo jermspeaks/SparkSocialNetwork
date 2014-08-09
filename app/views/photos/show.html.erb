@@ -7,7 +7,7 @@
 
 <p>
   <strong>Uploader:</strong>
-  <%= @photo.uploader_id %>
+  <%= link_to @photo.uploader.first_name + " " + @photo.uploader.last_name, @photo.uploader %>
 </p>
 
 <p>
@@ -16,4 +16,4 @@
 </p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<%= link_to 'Back', @photo.uploader %>

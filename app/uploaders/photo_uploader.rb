@@ -44,6 +44,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
     # returns a 35x35 image
     process :resize_to_fill => [35, 35]
   end
+  version :fit_thumbnail do 
+    process :resize_to_fit => [nil, 200]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

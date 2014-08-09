@@ -1,6 +1,27 @@
 #main {
 	margin-top: 47px;
 }
+
+.navigation-bar fixed-top {
+	text-transform: uppercase;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 700;
+}
+
+.navigation-bar-content {
+	text-transform: uppercase;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 700;
+	padding: 18px;
+}
+
+
+.metro .navigation-bar, .metro .navbar {
+	width: 100%;
+	display: block;
+	background-color: #284d86;
+	color: white;
+}
 /*nav {
 	background-color: yellow;
 	width: 100%;
@@ -20,4 +41,3 @@ nav li {
 nav li a {
 	text-decoration: none;
 }*/
-

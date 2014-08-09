@@ -13,20 +13,25 @@ body {
   position: absolute;
   left: 300px;
   top: 170px;
-  color: #000070;
+  color: #ff3333;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
 }
 
 .container p {
   position: fixed;
-  color: #d05e27;
-  font-size: 18px;
+  color: #284d86;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,serif;
+  font-size: 20px;
+  font-weight: 700;
   left: 300px;
   top: 275px;
 }
 
 .new_user {
   position: absolute;
-  left: 810px;
+  left: 850px;
   top: 205px;
 }
 

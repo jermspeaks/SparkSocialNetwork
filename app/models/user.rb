@@ -17,6 +17,31 @@ class User < ActiveRecord::Base
   has_many :friend_requests
   has_many :requests, through: :friend_requests, source: :requester
 
+  def avatar_large
+    if self.profile_pics.all.empty? 
+      'default_150.png'
+    else
+      self.profile_pics.all.last.url.large
+    end
+  end
+
+  def avatar_medium
+    if self.profile_pics.all.empty? 
+      'default_50.png'
+    else
+      self.profile_pics.all.last.url.medium
+    end
+  end
+
+  def avatar_small
+    if self.profile_pics.all.empty? 
+      'default_35.png'
+    else
+      self.profile_pics.all.last.url.small
+    end
+  end
+
+
   def send_request(receiver_id)
     receiver = User.find(receiver_id)
     if (receiver && !receiver.friends.include?(self) && !receiver.requests.include?(self))
@@ -34,12 +59,14 @@ class User < ActiveRecord::Base
       UserFriend.create(user_id: requester_id, friend_id: self.id)
       # delete request
       FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+      self.reload
     else
       nil
     end
   end
 
   def reject_request(requester_id)
-      FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+    FriendRequest.where(user_id: self.id, requester_id: requester_id).take!.destroy
+    self.reload
   end
 end

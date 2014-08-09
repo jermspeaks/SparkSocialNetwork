@@ -9,11 +9,21 @@
 
 #all-users {
 	position: fixed;
-	height: 120px;
-	border: solid black 1px;
+	border: groove;
 	width: 25%;	
 }
 
 #all-users ul {
-	
+	list-style: none;
+}
+
+#all-requests {
+	position: fixed;
+	border: groove;
+	width: 25%;	
+	margin-left: 72%;
+}
+
+#all-requests ul {
+	list-style: none;
 }

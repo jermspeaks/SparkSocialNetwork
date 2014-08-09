@@ -9,16 +9,19 @@
       <%= render 'partials/allusers' %>
     </div>
   </div>
+
+  <div id="friend-request">
+    <div id="all-requests">
+      <%= render 'partials/allrequests' %>
+    </div>
+  </div>
 <% end %>
 
 <div class="user-profile">
   <h1>WELCOME TO FLIGHT</h1>
   <div class="user-avatar">
-     <% if @user.profile_pics.all.size == 0 %>
-  	   <%= image_tag('rsz_default_avatar.png') %>  
-     <% else %>
-       <%= image_tag(@user.profile_pics.all.last.url.large) %>
-     <% end %>
+     
+    <%= image_tag(@user.avatar_large) %>
      <% if session[:user_id] && session[:user_id] == @user.id %>
   	 <div id="change-avatar">
   	   <%= form_for @photo do |f| %>

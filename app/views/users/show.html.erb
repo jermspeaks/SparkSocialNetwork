@@ -41,6 +41,10 @@
     <p><%= @user.email %></p>
   </div>
 
+  <div class="create-post">
+    <%= link_to 'Create Post', new_post_path %>
+  </div>
+
   <% if session[:user_id] && session[:user_id] == @user.id %>
   <div id="upload-new-photo">
     <p>Wanna upload a new photo?</p>

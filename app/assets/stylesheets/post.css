@@ -10,3 +10,9 @@
 	color: blue;
 	text-decoration: none;
 }
+
+.page-new-post {
+	position: relative;
+	top: 100px;
+	left: 400px;
+}

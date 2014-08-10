@@ -6,7 +6,7 @@
 	  <span>Last update: <%= @post.updated_at.localtime.strftime("%e %b %Y - %I:%M %p") %></span> |
 	  <span></span>
 	  <span>
-	  by <%= link_to @post.poster.first_name + " " + post.poster.last_name, post.poster %>
+	  by <%= link_to @post.poster.first_name + " " + @post.poster.last_name, @post.poster %>
 	  </span>
 	</p>
 

@@ -1,13 +1,13 @@
 module UserHelper
   
   def login(user)
-    visit root_path
-    fill_in 'email', with: user.email
-    fill_in 'password', with: user.password
+    visit login_path
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
     click_button 'LOG IN'
   end
   
-  def logout(user)
+  def logout
     visit root_path
     click_link 'LOG OUT'
   end

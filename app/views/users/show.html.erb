@@ -90,13 +90,14 @@
 <div class="user-timeline">
   <%= form_for @post do |f| %>
       <%= f.text_area :status, size: "100x10" %>
+      <%= f.hidden_field :timeline_id, value: @user.id %>
       <div class="actions">
         <br/>
         <%= f.submit "Post!" %>
       </div>
   <% end %>
 
-  <% @user.posts.each do |post| %>
+  <% @user.timeline_posts.each do |post| %>
     <div class="user-post">
         <p><%= post.status %></p>
         <p class="time-post">

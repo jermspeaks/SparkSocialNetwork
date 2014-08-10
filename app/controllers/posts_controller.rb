@@ -9,10 +9,11 @@ class PostsController < ApplicationController
   def create
     current_user
     if @current_user
+      binding.pry
       new_post = Post.create(post_params)
       new_post.update(poster: @current_user)
       new_post.save
-      redirect_to user_path(@current_user)
+      redirect_to user_path(User.find(new_post.timeline_id))
     else
       redirect_to root_path
     end
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:status, :poster)
+      params.require(:post).permit(:status, :poster, :timeline_id)
     end
 
 end

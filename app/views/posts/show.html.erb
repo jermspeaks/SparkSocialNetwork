@@ -17,9 +17,9 @@
 		<% @post.comments.each do |comment| %>
 			<p>User: <%= comment.commenter.first_name %> <%= comment.commenter.last_name %></p>
 			<p>Comment: <span><%= comment.text %></span></p>
-			<p>Created at: <%= comment.created_at.localtime.strftime("%e %b %Y - %I:%M %p") %>
+			<p>Created at: <%= comment.created_at.localtime.strftime("%e %b %Y - %I:%M %p") %></p>
 		<% end %>
 	</div>
-<div>
+</div>
 
 

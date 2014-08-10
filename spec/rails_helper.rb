@@ -38,7 +38,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-
+  config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
 
   config.include(UserHelper)

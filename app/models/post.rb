@@ -8,6 +8,6 @@ class Post < ActiveRecord::Base
   validates_presence_of :poster
 
   def time_elapsed
-  	Time.now - Time.parse(self.created_at.to_s)
+  	ChronicDuration.output(Time.now - Time.parse(self.created_at.to_s))
   end
 end

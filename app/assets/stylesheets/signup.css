@@ -55,18 +55,18 @@ body {
 
 
 .metro input[type="submit"], .metro input[type="reset"] {
-padding: 16px 60px;
-text-align: center;
-vertical-align: middle !important;
-background-color: green;
-border: 3px transparent solid;
-color: white;
-border-radius: 20px;
-cursor: pointer;
-display: inline-block;
-outline: none;
-font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
-font-size: 40px;
-line-height: 16px;
-margin: auto;
+  padding: 10px 24px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: green;
+  border: 3px transparent solid;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  line-height: 16px;
+  margin: auto;
 }

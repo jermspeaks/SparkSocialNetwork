@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @users = User.all - @user.friends.all - [@user] - @user.receivers.all
     @requests = @user.requests.all
     @photo = Photo.new
+    @post = Post.new
   end
 
   #====================================================

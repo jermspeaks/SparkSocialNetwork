@@ -24,7 +24,6 @@ RSpec.feature 'Root Page' do
 
   scenario 'user signs up with the sign up form' do
     sign_up_with 'joe', 'blo', 'valid@example.com', 'password'
-    visit signup_path
   end
 
 end

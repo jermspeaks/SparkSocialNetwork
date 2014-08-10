@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
 
 
-  resources :users, except: :index do 
+  resources :users, except: :index do
       get '/friends', to: 'users#friends'
-  end 
+  end
   resources :photos
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts, except: :index do

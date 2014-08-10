@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature 'Root Page' do
+RSpec.feature 'Login Page' do
 
   before do
-    visit root_path
+    visit login_path
   end
 
   context 'navigation bar' do
@@ -22,8 +22,9 @@ RSpec.feature 'Root Page' do
 
   end
 
-  scenario 'user signs up with the sign up form' do
-    sign_up_with 'joe', 'blo', 'valid@example.com', 'password'
+  scenario 'user signs in with the sign in form' do
+    expect(page).to have_content('WELCOME TO SPARK LOGIN PAGE')
+    sign_in_with 'simon@rade.com', 'simon'
   end
 
 end

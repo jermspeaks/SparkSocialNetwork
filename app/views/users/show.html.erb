@@ -77,7 +77,7 @@
       <a class="controls left"><i class="icon-arrow-left-3"></i></a>
       <a class="controls right"><i class="icon-arrow-right-3"></i></a>
     <% end %>
-    
+
   </div>
 </div>
 <p class="divider2"></p>
@@ -106,6 +106,7 @@
         <span class="time-span">
         by <%= link_to post.poster.first_name + " " + post.poster.last_name, post.poster %>
         </span>
+        <span><%= link_to 'Add Comment', new_post_path %></span>
       </p>
 
       <% post.photos.all.each do |photo| %>

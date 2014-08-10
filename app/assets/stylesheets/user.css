@@ -11,6 +11,25 @@
 	margin-bottom: 8px;
 }
 
+.facebook {
+	height: 250px;
+	width: 455px;
+}
+
+.user-avatar {
+	float:left;
+	width: 220px;
+	height: 220px;
+}
+
+.user-info {
+	float: right;
+	width: 230px;
+	height: 220px;
+}
+
+
+
 .user-profile {
 	margin-left: 30%;
 	margin-right: 30%;

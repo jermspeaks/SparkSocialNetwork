@@ -17,30 +17,33 @@
 
 <div class="user-profile">
   <h1>WELCOME TO FLIGHT</h1>
+  <p class="divider2"></p>
   <div id="loading">
 
   </div>
-  <div class="user-avatar">
+  <div class="facebook">
+    <div class="user-avatar">
 
-    <%= image_tag(@user.avatar_large) %>
-     <% if session[:user_id] && session[:user_id] == @user.id %>
-  	 <div id="change-avatar">
-  	   <%= form_for @photo do |f| %>
-        <%= f.hidden_field :description, value: 'avatar' %>
-        <%= f.file_field :url, title: "Change my avatar" %>
-        <div class="actions">
-          <%= f.submit "Submit" %>
-        </div>
-      <% end %>
-  	 </div>
-     <% end %>
+      <%= image_tag(@user.avatar_large) %>
+       <% if session[:user_id] && session[:user_id] == @user.id %>
+    	 <div id="change-avatar">
+    	   <%= form_for @photo do |f| %>
+          <%= f.hidden_field :description, value: 'avatar' %>
+          <br/>
+          <%= f.file_field :url %>
+          <div class="actions">
+            <%= f.submit "Submit" %>
+          </div>
+        <% end %>
+    	 </div>
+       <% end %>
+    </div>
+
+    <div class="user-info">
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+      <p><%= @user.email %></p>
+    </div>
   </div>
-
-  <div class="user-info">
-    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-    <p><%= @user.email %></p>
-  </div>
-
   
 
   <% if session[:user_id] && session[:user_id] == @user.id %>
@@ -51,6 +54,7 @@
       <%= f.text_field :description %>
       <%= f.file_field :url %>
       <div class="actions">
+        <br/>
         <%= f.submit "Upload Photo" %>
       </div>
     <% end %>

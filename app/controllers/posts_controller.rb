@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    Post.find(params[:id]).include(:update, :photo)
+    @post = Post.find(params[:id])
   end
 
   def edit

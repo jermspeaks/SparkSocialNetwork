@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @post = Post.new
   end
 
-  
+
   def send_request
     current_user
     if @current_user
@@ -59,7 +59,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    current_user
+    if @current_user
+      redirect_to '/feed'
+    else
+      @user = User.new
+    end
   end
 
   def create

@@ -26,8 +26,14 @@
 
       <%= image_tag(@user.avatar_large) %>
        <% if session[:user_id] && session[:user_id] == @user.id %>
-    	 <div id="change-avatar">
-    	   <%= form_for @photo do |f| %>
+       <% end %>
+    </div>
+
+    <div class="user-info">
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+      <p><%= @user.email %></p>
+      <div id="change-avatar">
+         <%= form_for @photo do |f| %>
           <%= f.hidden_field :description, value: 'avatar' %>
           <br/>
           <%= f.file_field :url %>
@@ -35,23 +41,15 @@
             <%= f.submit "Submit" %>
           </div>
         <% end %>
-    	 </div>
-       <% end %>
-    </div>
-
-    <div class="user-info">
-      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-      <p><%= @user.email %></p>
+       </div>
     </div>
   </div>
   
 
   <% if session[:user_id] && session[:user_id] == @user.id %>
   <div id="upload-new-photo">
-    <p>Wanna upload a new photo?</p>
     <%= form_for @photo do |f| %>
-      <%= f.label :description %><br>
-      <%= f.text_field :description %>
+      <%= f.text_field :description, placeholder: "Description" %>
       <%= f.file_field :url %>
       <div class="actions">
         <br/>

@@ -12,7 +12,7 @@
 }
 
 .facebook {
-	height: 250px;
+	height: 220px;
 	width: 455px;
 }
 
@@ -81,4 +81,8 @@
 
 .user-timeline {
 	margin-left: 5%;
+}
+
+#change-avatar {
+
 }

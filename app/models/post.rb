@@ -5,4 +5,8 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   validates_presence_of :poster
+
+  def time_elapsed
+  	Time.now - Time.parse(self.created_at.to_s)
+  end
 end

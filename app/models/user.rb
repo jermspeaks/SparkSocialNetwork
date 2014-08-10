@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :requests, through: :friend_requests, source: :requester
   has_many :sent_requests, class_name: "FriendRequest", foreign_key: "requester_id"
   has_many :receivers, through: :sent_requests, source: :user
+  has_many :timeline_posts, class_name: "Post", foreign_key: "timeline_id"
 
   def avatar_large
     if self.profile_pics.all.empty? 

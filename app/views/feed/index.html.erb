@@ -6,7 +6,7 @@
 <p class="divider2"></p>
 <% @posts.each do |post| %>
 	<div class="feed-post">
-		<p><span><%= image_tag(post.poster.avatar_large) %></span><%= post.poster.first_name %> <%= post.poster.last_name %></p>
+		<p><span><%= image_tag(post.poster.avatar_medium) %></span><%= post.poster.first_name %> <%= post.poster.last_name %></p>
 		<% if post.photos %>
 			<% post.photos.each do |photo| %>
 				<p>

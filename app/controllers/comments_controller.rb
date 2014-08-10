@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
+  include ApplicationHelper
   def create
-    @user = User.find(session[:user_id])
+    current_user
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    @comment.update(commenter: @user)
+    @comment.update(commenter: @current_user)
     redirect_to post_path(@post)
   end
 

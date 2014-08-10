@@ -7,10 +7,12 @@
         <span class="element-divider"></span>
     	<% current_user %>
     	<% if @current_user %>
-	    	<a class="element" href="/feed">HOME</a>
+	    	<a class="element" href="/feed">FEED</a>
 	    	<span class="element-divider"></span>
-	    	<a id="add-button" class="element" href="#">ADD FRIENDS</a>
+	    	<a class="element" href="/users/<%=@current_user.id %>/friends">FRIENDS</a>
 	    	<span class="element-divider"></span>
+	    	<a id="add-button" class="element" href="#">ADD A FRIEND</a>
+	    	
 
 	        <span class="icon-locked-2"><%= link_to 'Log out', logout_path, {class: "element place-right"} %></span>
 	        <span class="element-divider place-right"></span>

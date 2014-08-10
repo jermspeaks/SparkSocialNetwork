@@ -1,0 +1,15 @@
+<center>
+<% if @user.friends.all.empty? %>
+	<h1>FOREVER ALONE</h1>
+<% else %>
+<h1> FRIENDS </h1>
+<p class="divider2"></p>	
+<ul class="friends">
+<% @user.friends.all.each do |friend| %>	
+	<li><%= image_tag(friend.avatar_small) %>
+		<%= link_to friend.first_name + " " + friend.last_name, friend %>
+	</li>
+<% end %> 
+</ul>
+<% end %>
+</center>

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   
   
 
-  resources :users, except: :index
+  resources :users, except: :index do 
+      get '/friends', to: 'users#friends'
+  end 
   resources :photos
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts, except: :index
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   post '/users/send.json', to: 'users#send_request'
   post '/users/accept.json', to: 'users#accept_request'
   post '/users/reject.json', to: 'users#reject_request'
+
 
   # aliases:
   get '/signup', to: 'users#new', as: :signup

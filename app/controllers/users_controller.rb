@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @post = Post.new
   end
 
-  #====================================================
+  
   def send_request
     current_user
     if @current_user
@@ -49,7 +49,14 @@ class UsersController < ApplicationController
     end
   end
 
-  #====================================================
+  def friends
+    @user = User.find(params[:user_id])
+    if @user
+      render 'friends'
+    else
+      redirect_to '/'
+    end
+  end
 
   def new
     @user = User.new

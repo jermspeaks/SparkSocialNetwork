@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
     @comment.update(commenter: @current_user)
-    redirect_to post_path(@post)
+    redirect_to user_path(User.find(@post.timeline_id))
   end
 
   def new

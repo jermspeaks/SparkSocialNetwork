@@ -32,6 +32,8 @@
 	margin-bottom: 6px;
 }
 
+
+
 /*
 	Feed 
 */
@@ -41,4 +43,21 @@
 	margin-right: 20%;
 }
 
+.comments-feed {
+	
+}
+
+.comment-span {
+	margin-left: 18px;
+	font-size: 11.5px;
+}
+
+.comments-feed li {
+	list-style: none;
+	margin-bottom: 6px;
+}
+
+#show-comment {
+	display: none;
+}
 

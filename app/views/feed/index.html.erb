@@ -1,3 +1,11 @@
+<script type="text/javascript">
+	$(function() {
+	  $('.comments-feed').on('click', 'a#show', function(event) {
+		event.preventDefault();
+		$(this).parent().next().toggle("slow");
+	   });
+	});
+</script>
 <center>
 <br/>
 <h1>Feed</h1>
@@ -21,6 +29,23 @@
 		<% if post.status %>
 			<p><%= post.status %></p>
 		<% end %>
+		<div class="comments-feed">
+          <p><strong>Comments</strong> 
+          	<a href='#' id="show"><%= image_tag('cm25.png') %></a>
+          </p>
+          <div id="show-comment">
+          <ul>
+          <% post.comments.all.each do |comment| %>
+            <li><span class="comment-span">
+              <%= image_tag(comment.commenter.avatar_small) %>
+              <%= link_to comment.commenter.first_name, comment.commenter %> 
+              (<%= comment.created_at.localtime.strftime("%I:%M %p") %>):
+              <%= comment.text %>
+            </span></li>
+          <% end %>
+         </ul>
+         </div> 
+        </div>
 		<p class="divider1"></p>
 	</div>
 <% end %>

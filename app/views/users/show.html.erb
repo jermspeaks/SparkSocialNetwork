@@ -44,7 +44,7 @@
        </div>
     </div>
   </div>
-  
+
 
   <% if session[:user_id] && session[:user_id] == @user.id %>
   <div id="upload-new-photo">
@@ -117,12 +117,12 @@
           <% post.comments.all.each do |comment| %>
             <li><span class="comment-span">
               <%= image_tag(comment.commenter.avatar_small) %>
-              <%= link_to comment.commenter.first_name, comment.commenter %> 
+              <%= link_to comment.commenter.first_name, comment.commenter %>
               (<%= comment.created_at.localtime.strftime("%I:%M %p") %>):
               <%= comment.text %>
             </span></li>
           <% end %>
-         </ul> 
+         </ul>
         </div>
     <div>
     <p class="divider1"></p>

@@ -25,6 +25,7 @@ RSpec.feature 'Login Page' do
   scenario 'user signs in with the sign in form' do
     expect(page).to have_content('WELCOME TO SPARK LOGIN PAGE')
     sign_in_with 'simon@rade.com', 'simon'
+    
   end
 
 end

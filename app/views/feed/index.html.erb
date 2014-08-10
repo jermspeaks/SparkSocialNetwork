@@ -1,7 +1,12 @@
-<h1>Welcome To Your Feed</h1>
+<center>
+<br/>
+<h1>Feed</h1>
+<br/>
+</center>
+<p class="divider2"></p>
 <% @posts.each do |post| %>
 	<div class="feed-post">
-		<p><%= post.poster.first_name %> <%= post.poster.last_name %></p>
+		<p><span><%= image_tag(post.poster.avatar_medium) %></span><%= post.poster.first_name %> <%= post.poster.last_name %></p>
 		<% if post.photos %>
 			<% post.photos.each do |photo| %>
 				<p>
@@ -11,11 +16,10 @@
 
 				<p>
 				  <strong>Uploader:</strong>
-				  <%= photo.uploader_id %>
+				  <%= photo.uploader.first_name %>
 				</p>
 
 				<p>
-				  <strong>Url:</strong>
 				  <%= image_tag(photo.url) %>
 				</p>
 			<% end %>

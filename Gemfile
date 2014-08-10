@@ -38,6 +38,8 @@ gem "mini_magick"
 gem 'jquery-ui-rails'
 gem 'pry'
 
+gem 'chronic_duration', '~> 0.10.5'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

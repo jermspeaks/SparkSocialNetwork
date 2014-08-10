@@ -63,4 +63,12 @@ RSpec.describe Post, :type => :model do
     end
   end
 
+  describe '#time_elapsed' do
+    it 'should tell how much time has elapsed since the post was created' do
+      post = Post.create(poster: @user)
+      sleep 1.0
+      expect(post.time_elapsed).to_not be_nil
+    end
+  end
+
 end

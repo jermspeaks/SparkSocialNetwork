@@ -1,7 +1,7 @@
 <h1>Welcome To Your Feed</h1>
 <% @posts.each do |post| %>
 	<div class="feed-post">
-		<p><%= post.poster.first_name %> <%= post.poster.last_name %></p>
+		<p><span><%= image_tag(post.poster.avatar_large) %></span><%= post.poster.first_name %> <%= post.poster.last_name %></p>
 		<% if post.photos %>
 			<% post.photos.each do |photo| %>
 				<p>
